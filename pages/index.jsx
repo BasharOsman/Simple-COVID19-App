@@ -40,7 +40,7 @@ const onInputChange = (searchedData)=>{
           return (
             <div className="country" key={i}>
               <a href={`countries/${Slug}`}>
-                <img src={`/w160/${CountryCode}.png`} alt={Country} width="160" height="100"/>
+                <img src={`/static/flags/${CountryCode}.png`} alt={Country} width="160" height="100"/>
               </a> 
               <div className="center countryName">{Country.split("(")[0].split(",")[0]}</div>
             </div>

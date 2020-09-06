@@ -74,7 +74,7 @@ export default class Country extends React.Component {
               </ul>
             </div>
             <div className="image">
-              <img src={`/w160/${CountryCode}.png`} alt={slug} width="160" height="100"/>
+              <img src={`/static/flags/${CountryCode}.png`} alt={slug} width="160" height="100"/>
             </div>
           </div>
           <div>
