@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Table from 'comp/Table'
 import getDate from 'fun/getDate'
 import numbersFormat from 'fun/numbersFormat'
-import Link from 'next/Link'
+import Link from 'next/link'
 const countryEndpoint = process.env.country;
 
 export default class Country extends React.Component {
