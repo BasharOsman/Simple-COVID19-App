@@ -46,7 +46,6 @@ export default class Country extends React.Component {
         dateOfDay: b.Date
       }))
     const { Active,  Confirmed,  Deaths, Recovered,countryName,dateOfDay } = totalData;
-      console.log('this.props', this.props)
     return (
       <>
         <Head>
