@@ -9,3 +9,7 @@ summary: https://api.covid19api.com/summary,
 country: https://api.covid19api.com/country,
 
 ip: http://ip-api.com/json/,
+
+## Live Example
+
+[![vercel](./public/static/vercel.svg)](https://simple-covid-19-app.vercel.app/)
