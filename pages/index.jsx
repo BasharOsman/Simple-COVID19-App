@@ -7,7 +7,7 @@ export default function Home({ data:{Countries, Global}, data , location}) {
 
 const [search, setSearch] = useState(Countries)
 const {NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered} = Global;
-
+console.log('data', data)
 const onInputChange = (searchedData)=>{
   setSearch(searchedData)
 }

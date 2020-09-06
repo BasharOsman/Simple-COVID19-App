@@ -16,7 +16,7 @@ export default class Country extends React.Component {
   async componentDidMount(){
     const {slug} = this.props;
     
-    const data = await fetch(`${countryEndpoint}/${slug}`);
+    const data = await fetch(countryEndpoint+"/"+slug);
     const cases = await data.json();
 
     this.setState({
@@ -28,6 +28,7 @@ export default class Country extends React.Component {
   render () {
     const { slug } = this.props
     const { cases, isLoading } = this.state
+    console.log('this.props', this.props)
     if(isLoading){return <Head><title>Country: {slug}</title></Head>}
     const {CountryCode} = cases[cases.length - 1];
     const afterDateFormat = cases.map(
