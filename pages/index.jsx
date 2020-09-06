@@ -3,11 +3,10 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import numbersFormat from 'fun/numbersFormat'
 import Search from 'comp/Search'
-export default function Home({ data:{Countries, Global}, data , location}) {
+export default function Home({ Countries, Global , location}) {
 
 const [search, setSearch] = useState(Countries)
 const {NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered} = Global;
-console.log('data', data)
 const onInputChange = (searchedData)=>{
   setSearch(searchedData)
 }
@@ -131,7 +130,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data,
+      Countries: data.Countries,
+      Global: data.Global,
       location: json.country,
     },
   }

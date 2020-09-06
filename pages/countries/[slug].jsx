@@ -14,21 +14,15 @@ export default class Country extends React.Component {
     }
   }
   async componentDidMount(){
-    const {slug} = this.props;
-    
-    const data = await fetch(countryEndpoint+"/"+slug);
-    const cases = await data.json();
-
+    const { cases } = this.props;
     this.setState({
       cases,
       isLoading: false,
     });
-
   }
   render () {
     const { slug } = this.props
     const { cases, isLoading } = this.state
-    console.log('this.props', this.props)
     if(isLoading){return <Head><title>Country: {slug}</title></Head>}
     const {CountryCode} = cases[cases.length - 1];
     const afterDateFormat = cases.map(
@@ -52,7 +46,7 @@ export default class Country extends React.Component {
         dateOfDay: b.Date
       }))
     const { Active,  Confirmed,  Deaths, Recovered,countryName,dateOfDay } = totalData;
-
+      console.log('this.props', this.props)
     return (
       <>
         <Head>
@@ -147,10 +141,13 @@ export default class Country extends React.Component {
     )
   }
 }
-Country.getInitialProps = ({query}) =>{
+Country.getInitialProps = async ({query}) =>{
   // query.slug
   const {slug}=query;
+  const data = await fetch(`${countryEndpoint}/${slug}`);
+  const cases = await data.json();
   return {
      slug,
+     cases
   }
 }
